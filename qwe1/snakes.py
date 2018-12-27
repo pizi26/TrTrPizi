@@ -3,7 +3,7 @@ from kivy.clock import Clock
 from kivy.config import Config
 Config.set('graphics', 'resizable', '0');
 Config.set('graphics', 'width', '1500');
-Config.set('graphics', 'height', '900');
+Config.set('graphics', 'height', '1000');
 from kivy.core.window import Window
 from kivy.properties import (ListProperty,
                              NumericProperty,
@@ -20,6 +20,7 @@ from kivy.graphics import Line
 from kivy.lang import Builder
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.scatter import Scatter
+from kivy.uix.colorpicker import ColorPicker
 
 
 class SnakesGame(Widget):
@@ -67,8 +68,67 @@ class SnakesGame(Widget):
     
         
     
-    def btn_press(self):
-        pass
+    def btn_press0_snake1(self):
+        self.snake1.color = 1, 0, 0, 1
+    def btn_press1_snake1(self):
+        self.snake1.color = 1, 0, 200/255., 1
+    def btn_press2_snake1(self):
+        self.snake1.color = 170/255., 0, 1, 1
+    def btn_press3_snake1(self):
+        self.snake1.color = 0, 0, 1, 1
+    def btn_press4_snake1(self):
+        self.snake1.color = 0, 200/255., 1, 1
+    def btn_press5_snake1(self):
+        self.snake1.color = 0, 1, 200/255., 1
+    def btn_press6_snake1(self):
+        self.snake1.color = 0, 1, 150/255., 1
+    def btn_press7_snake1(self):
+        self.snake1.color = 0, 1, 0, 1
+    def btn_press8_snake1(self):
+        self.snake1.color = 180/255., 1, 0, 1
+    def btn_press9_snake1(self):
+        self.snake1.color = 1, 1, 0, 1
+    def btn_press10_snake1(self):
+        self.snake1.color = 1, 100/255, 0, 1
+    def btn_press11_snake1(self):
+        self.snake1.color = 1, 1, 1, 1
+    def btn_press12_snake1(self):
+        self.snake1.color = 200/255., 200/255., 200/255., 1
+    def btn_press13_snake1(self):
+        self.snake1.color = 120/255., 120/255., 120/255., 1
+    def btn_press14_snake1(self):
+        self.snake1.color = 50/255., 50/255., 50/255., 1
+    def btn_press0_snake2(self):
+        self.snake2.color = 1, 0, 0, 1
+    def btn_press1_snake2(self):
+        self.snake2.color = 1, 0, 200/255., 1
+    def btn_press2_snake2(self):
+        self.snake2.color = 170/255., 0, 1, 1
+    def btn_press3_snake2(self):
+        self.snake2.color = 0, 0, 1, 1
+    def btn_press4_snake2(self):
+        self.snake2.color = 0, 200/255., 1, 1
+    def btn_press5_snake2(self):
+        self.snake2.color = 0, 1, 200/255., 1
+    def btn_press6_snake2(self):
+        self.snake2.color = 0, 1, 150/255., 1
+    def btn_press7_snake2(self):
+        self.snake2.color = 0, 1, 0, 1
+    def btn_press8_snake2(self):
+        self.snake2.color = 180/255., 1, 0, 1
+    def btn_press9_snake2(self):
+        self.snake2.color = 1, 1, 0, 1
+    def btn_press10_snake2(self):
+        self.snake2.color = 1, 100/255, 0, 1
+    def btn_press11_snake2(self):
+        self.snake2.color = 1, 1, 1, 1
+    def btn_press12_snake2(self):
+        self.snake2.color = 200/255., 200/255., 200/255., 1
+    def btn_press13_snake2(self):
+        self.snake2.color = 120/255., 120/255., 120/255., 1
+    def btn_press14_snake2(self):
+        self.snake2.color = 50/255., 50/255., 50/255., 1
+
         
     
     def run(self):
