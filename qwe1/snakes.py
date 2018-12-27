@@ -12,6 +12,14 @@ from kivy.properties import (ListProperty,
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
 from kivy.vector import Vector
+from kivy.uix.button import Button
+from kivy.uix.screenmanager import (ScreenManager,
+                                    Screen,
+                                    FadeTransition)
+from kivy.graphics import Line
+from kivy.lang import Builder
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.scatter import Scatter
 
 
 class SnakesGame(Widget):
@@ -25,6 +33,7 @@ class SnakesGame(Widget):
         super(SnakesGame, self).__init__(**kwargs)
         self._keyboard = Window.request_keyboard(self._keyboard_closed, self)
         self._keyboard.bind(on_key_down=self._on_keyboard_down)
+        
 
     def _keyboard_closed(self):
         self._keyboard.unbind(on_key_down=self._on_keyboard_down)
@@ -55,7 +64,13 @@ class SnakesGame(Widget):
         elif keycode[1] == 'right':
             if self.snake2.direction != [-1, 0]:
                 self.snake2.direction = (1, 0)
-
+    
+        
+    
+    def btn_press(self):
+        pass
+        
+    
     def run(self):
         Clock.schedule_interval(self.update, 1/60.)
 
@@ -76,6 +91,8 @@ class SnakesGame(Widget):
         for trail in self.trails:
             self.remove_widget(trail)
         del self.trails[:]
+
+
 
 
 class Snake(Widget):
@@ -165,25 +182,36 @@ class StatusBar(BoxLayout):
     pass
 
 
-class SnakesApp(App):
-    def build(self):
-        Config.set('kivy', 'exit_on_escape', '0')
-        game = SnakesGame()
-        game.run()
-        return game
 
 def main():
     SnakesApp().run()
 
-'''class MainScreen(Screen):    
-    pass
-
-class ScreenManagement(ScreenManager):
-    pass
-
-class Main(Widget):    
+    
+class SnakesApp(App):
+    '''def build(self):
+        s = Scatter()
+        f1 = FloatLayout(size = (300, 300))
+        s.add_widget(f1)
+        f1.add_widget(Button(
+            text = "Button",
+            font_size = 30,
+            on_press = self.btn_press,
+            background_color = [.32, .85, .94, 1],
+            background_normal = '',
+            size_hint = (.5, .25),
+            pos = (640 / 2 - 160, 480 / 2 - (480 * .25 / 2))));      
+        return s'''
+                
+           
     def build(self):
-        return presentation'''
+        Config.set('kivy', 'exit_on_escape', '0')
+        game = SnakesGame()
+        game.run() 
+        return game
+        
+        
+        
+    
 
 
 if __name__ == '__main__':

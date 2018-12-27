@@ -2,7 +2,7 @@
     snake1: snake1
     snake2: snake2
     status_bar: status_bar
-
+    lbl: my_label
     Snake:
         id: snake1
         center_x: self.parent.width / 3.
@@ -33,6 +33,18 @@
         ScoreLabel:
             text: str(snake2.score)
             color: snake2.color
+
+    
+    
+    Widget:
+
+	Button:
+	    text: 'CLicke me'
+	    on_press: root.btn_press()
+	
+	Label:
+	    id: my_label
+	    text: ''
 
 
 <Snake>:
@@ -92,3 +104,4 @@
                 (self.x+dp(1), self.y+dp(1),
                 self.width-dp(1), self.height-dp(1))
             width: dp(1)
+
