@@ -2,8 +2,8 @@ from kivy.app import App
 from kivy.clock import Clock
 from kivy.config import Config
 Config.set('graphics', 'resizable', '0');
-Config.set('graphics', 'width', '1500');
-Config.set('graphics', 'height', '900');
+Config.set('graphics', 'width', '1200');
+Config.set('graphics', 'height', '700');
 from kivy.core.window import Window
 from kivy.properties import (ListProperty,
                              NumericProperty,
@@ -174,17 +174,6 @@ class SnakesApp(App):
 
 def main():
     SnakesApp().run()
-
-'''class MainScreen(Screen):    
-    pass
-
-class ScreenManagement(ScreenManager):
-    pass
-
-class Main(Widget):    
-    def build(self):
-        return presentation'''
-
 
 if __name__ == '__main__':
     main()
