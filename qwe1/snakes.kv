@@ -2,7 +2,7 @@
     snake1: snake1
     snake2: snake2
     status_bar: status_bar
-
+    lbl: my_label
     Snake:
         id: snake1
         center_x: self.parent.width / 3.
@@ -17,7 +17,7 @@
         id: snake2
         center_x: self.parent.width * 2/3.
         center_y: self.parent.height / 2.
-        color: 1, 0, 191/255., 1
+        color: 1, 0, 200/255., 1
 
         canvas.before:
             Color:
@@ -33,6 +33,224 @@
         ScoreLabel:
             text: str(snake2.score)
             color: snake2.color
+
+    
+    
+    Widget:	
+	Button:
+	    on_press: root.btn_press0_snake1()
+	    background_color: 1, 0, 0, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (0, 0)
+
+	Button:
+	    on_press: root.btn_press1_snake1()
+	    background_color: 1, 0, 200/255., 1
+	    background_normal: ''
+	    size: (50, 50)	    
+	    pos: (100, 0)
+
+	Button:
+	    on_press: root.btn_press2_snake1()
+	    background_color: 170/255., 0, 1, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (200, 0)
+
+	Button:
+	    on_press: root.btn_press3_snake1()
+	    background_color: 0, 0, 1, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (300, 0)
+
+	Button:
+	    on_press: root.btn_press4_snake1()
+	    background_color: 0, 200/255., 1, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (400, 0)
+
+	Button:
+	    on_press: root.btn_press5_snake1()
+	    background_color: 0, 1, 200/255., 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (500, 0)
+
+	Button:
+	    on_press: root.btn_press6_snake1()
+	    background_color: 0, 1, 150/255., 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (600, 0)
+
+	Button:
+	    on_press: root.btn_press7_snake1()
+	    background_color: 0, 1, 0, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (700, 0)
+
+	Button:
+	    on_press: root.btn_press8_snake1()
+	    background_color: 180/255., 1, 0, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (800, 0)
+
+	Button:
+	    on_press: root.btn_press9_snake1()
+	    background_color: 1, 1, 0, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (900, 0)
+
+	Button:
+	    on_press: root.btn_press10_snake1()
+	    background_color: 1, 100/255, 0, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (1000, 0)
+
+	Button:
+	    on_press: root.btn_press11_snake1()
+	    background_color: 1, 1, 1, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (1100, 0)
+
+	Button:
+	    on_press: root.btn_press12_snake1()
+	    background_color: 200/255., 200/255., 200/255., 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (1200, 0)
+
+	Button:	    
+	    on_press: root.btn_press13_snake1()
+	    background_color: 120/255., 120/255., 120/255., 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (1300, 0)
+
+	Button:	    
+	    on_press: root.btn_press14_snake1()
+	    background_color: 50/255., 50/255., 50/255., 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (1400, 0)
+	Button:
+	    on_press: root.btn_press0_snake2()
+	    background_color: 1, 0, 0, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (50, 0)
+
+	Button:
+	    on_press: root.btn_press1_snake2()
+	    background_color: 1, 0, 200/255., 1
+	    background_normal: ''
+	    size: (50, 50)	    
+	    pos: (150, 0)
+
+	Button:
+	    on_press: root.btn_press2_snake2()
+	    background_color: 170/255., 0, 1, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (250, 0)
+
+	Button:
+	    on_press: root.btn_press3_snake2()
+	    background_color: 0, 0, 1, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (350, 0)
+
+	Button:
+	    on_press: root.btn_press4_snake2()
+	    background_color: 0, 200/255., 1, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (450, 0)
+
+	Button:
+	    on_press: root.btn_press5_snake2()
+	    background_color: 0, 1, 200/255., 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (550, 0)
+
+	Button:
+	    on_press: root.btn_press6_snake2()
+	    background_color: 0, 1, 150/255., 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (650, 0)
+
+	Button:
+	    on_press: root.btn_press7_snake2()
+	    background_color: 0, 1, 0, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (750, 0)
+
+	Button:
+	    on_press: root.btn_press8_snake2()
+	    background_color: 180/255., 1, 0, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (850, 0)
+
+	Button:
+	    on_press: root.btn_press9_snake2()
+	    background_color: 1, 1, 0, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (950, 0)
+
+	Button:
+	    on_press: root.btn_press10_snake2()
+	    background_color: 1, 100/255, 0, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (1050, 0)
+
+	Button:
+	    on_press: root.btn_press11_snake2()
+	    background_color: 1, 1, 1, 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (1150, 0)
+
+	Button:
+	    on_press: root.btn_press12_snake2()
+	    background_color: 200/255., 200/255., 200/255., 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (1250, 0)
+
+	Button:	    
+	    on_press: root.btn_press13_snake2()
+	    background_color: 120/255., 120/255., 120/255., 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (1350, 0)
+
+	Button:	    
+	    on_press: root.btn_press14_snake2()
+	    background_color: 50/255., 50/255., 50/255., 1
+	    background_normal: ''
+	    size: (50, 50)
+	    pos: (1450, 0)
+
+	Label:
+	    id: my_label
+	
+        
+	    
 
 
 <Snake>:
@@ -92,3 +310,4 @@
                 (self.x+dp(1), self.y+dp(1),
                 self.width-dp(1), self.height-dp(1))
             width: dp(1)
+

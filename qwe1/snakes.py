@@ -3,7 +3,7 @@ from kivy.clock import Clock
 from kivy.config import Config
 Config.set('graphics', 'resizable', '0');
 Config.set('graphics', 'width', '1200');
-Config.set('graphics', 'height', '700');
+Config.set('graphics', 'height', '800');
 from kivy.core.window import Window
 from kivy.properties import (ListProperty,
                              NumericProperty,
@@ -12,6 +12,15 @@ from kivy.properties import (ListProperty,
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
 from kivy.vector import Vector
+from kivy.uix.button import Button
+from kivy.uix.screenmanager import (ScreenManager,
+                                    Screen,
+                                    FadeTransition)
+from kivy.graphics import Line
+from kivy.lang import Builder
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.scatter import Scatter
+from kivy.uix.colorpicker import ColorPicker
 
 
 class SnakesGame(Widget):
@@ -25,6 +34,7 @@ class SnakesGame(Widget):
         super(SnakesGame, self).__init__(**kwargs)
         self._keyboard = Window.request_keyboard(self._keyboard_closed, self)
         self._keyboard.bind(on_key_down=self._on_keyboard_down)
+        
 
     def _keyboard_closed(self):
         self._keyboard.unbind(on_key_down=self._on_keyboard_down)
@@ -55,7 +65,72 @@ class SnakesGame(Widget):
         elif keycode[1] == 'right':
             if self.snake2.direction != [-1, 0]:
                 self.snake2.direction = (1, 0)
+    
+        
+    
+    def btn_press0_snake1(self):
+        self.snake1.color = 1, 0, 0, 1
+    def btn_press1_snake1(self):
+        self.snake1.color = 1, 0, 200/255., 1
+    def btn_press2_snake1(self):
+        self.snake1.color = 170/255., 0, 1, 1
+    def btn_press3_snake1(self):
+        self.snake1.color = 0, 0, 1, 1
+    def btn_press4_snake1(self):
+        self.snake1.color = 0, 200/255., 1, 1
+    def btn_press5_snake1(self):
+        self.snake1.color = 0, 1, 200/255., 1
+    def btn_press6_snake1(self):
+        self.snake1.color = 0, 1, 150/255., 1
+    def btn_press7_snake1(self):
+        self.snake1.color = 0, 1, 0, 1
+    def btn_press8_snake1(self):
+        self.snake1.color = 180/255., 1, 0, 1
+    def btn_press9_snake1(self):
+        self.snake1.color = 1, 1, 0, 1
+    def btn_press10_snake1(self):
+        self.snake1.color = 1, 100/255, 0, 1
+    def btn_press11_snake1(self):
+        self.snake1.color = 1, 1, 1, 1
+    def btn_press12_snake1(self):
+        self.snake1.color = 200/255., 200/255., 200/255., 1
+    def btn_press13_snake1(self):
+        self.snake1.color = 120/255., 120/255., 120/255., 1
+    def btn_press14_snake1(self):
+        self.snake1.color = 50/255., 50/255., 50/255., 1
+    def btn_press0_snake2(self):
+        self.snake2.color = 1, 0, 0, 1
+    def btn_press1_snake2(self):
+        self.snake2.color = 1, 0, 200/255., 1
+    def btn_press2_snake2(self):
+        self.snake2.color = 170/255., 0, 1, 1
+    def btn_press3_snake2(self):
+        self.snake2.color = 0, 0, 1, 1
+    def btn_press4_snake2(self):
+        self.snake2.color = 0, 200/255., 1, 1
+    def btn_press5_snake2(self):
+        self.snake2.color = 0, 1, 200/255., 1
+    def btn_press6_snake2(self):
+        self.snake2.color = 0, 1, 150/255., 1
+    def btn_press7_snake2(self):
+        self.snake2.color = 0, 1, 0, 1
+    def btn_press8_snake2(self):
+        self.snake2.color = 180/255., 1, 0, 1
+    def btn_press9_snake2(self):
+        self.snake2.color = 1, 1, 0, 1
+    def btn_press10_snake2(self):
+        self.snake2.color = 1, 100/255, 0, 1
+    def btn_press11_snake2(self):
+        self.snake2.color = 1, 1, 1, 1
+    def btn_press12_snake2(self):
+        self.snake2.color = 200/255., 200/255., 200/255., 1
+    def btn_press13_snake2(self):
+        self.snake2.color = 120/255., 120/255., 120/255., 1
+    def btn_press14_snake2(self):
+        self.snake2.color = 50/255., 50/255., 50/255., 1
 
+        
+    
     def run(self):
         Clock.schedule_interval(self.update, 1/60.)
 
@@ -76,6 +151,8 @@ class SnakesGame(Widget):
         for trail in self.trails:
             self.remove_widget(trail)
         del self.trails[:]
+
+
 
 
 class Snake(Widget):
@@ -165,15 +242,31 @@ class StatusBar(BoxLayout):
     pass
 
 
-class SnakesApp(App):
-    def build(self):
-        Config.set('kivy', 'exit_on_escape', '0')
-        game = SnakesGame()
-        game.run()
-        return game
 
 def main():
     SnakesApp().run()
-
+    
+class SnakesApp(App):
+    '''def build(self):
+        s = Scatter()
+        f1 = FloatLayout(size = (300, 300))
+        s.add_widget(f1)
+        f1.add_widget(Button(
+            text = "Button",
+            font_size = 30,
+            on_press = self.btn_press,
+            background_color = [.32, .85, .94, 1],
+            background_normal = '',
+            size_hint = (.5, .25),
+            pos = (640 / 2 - 160, 480 / 2 - (480 * .25 / 2))));      
+        return s'''
+                
+           
+    def build(self):
+        Config.set('kivy', 'exit_on_escape', '0')
+        game = SnakesGame()
+        game.run() 
+        return game
+        
 if __name__ == '__main__':
     main()
